@@ -1,0 +1,17 @@
+name: Build and Publish to Docker Hub
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Publish to Docker Registry
+        uses: elgohr/Publish-Docker-Github-Action@master
+        with:
+          name: uraniumreza/sample-web
+          username: ${{ DOCKERHUB_USER }}
+          password: ${{ DOCKERHUB_PASS }}
