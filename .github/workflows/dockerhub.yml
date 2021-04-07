@@ -13,5 +13,5 @@ jobs:
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
           name: uraniumreza/sample-web
-          username: ${{ DOCKERHUB_USER }}
-          password: ${{ DOCKERHUB_PASS }}
+          username: ${{ secrets.DOCKERHUB_USER }}
+          password: ${{ secrets.DOCKERHUB_PASS }}
